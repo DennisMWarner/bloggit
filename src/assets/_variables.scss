@@ -1,0 +1,38 @@
+$body-bg: #b5a280;
+
+$primary: #b5a280;
+$secondary: #352e36;
+$danger: #913c46;
+$success: #d4db9e;
+$warning: #856464;
+$info: #ef9965;
+
+$blue: blue;
+$indigo: indigo;
+$purple: purple;
+$pink: pink;
+$red: red;
+$orange: orange;
+$yellow: yellow;
+$green: green;
+$teal: teal;
+$cyan: cyan;
+$white: white;
+$gray: gray;
+$gray-dark: darkslategray;
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "white": $white,
+  "gray": $gray,
+  "gray-dark": $gray-dark,
+) !default;
