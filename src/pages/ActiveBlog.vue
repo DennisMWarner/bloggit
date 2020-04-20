@@ -3,14 +3,16 @@
     <h5>{{blog.blog.title}}</h5>
     <h3>{{blog.blog.body}}</h3>
     <img :src="blog.blog.imgUrl" alt />
-    <h3>{{blog.comments.body}}</h3>
+    <comments />
   </div>
 </template>
 
 
 <script>
-import blog from "../components/blog";
-import blogs from "../components/blogs";
+//import comment from "../components/comment";
+
+import comments from "../components/comments";
+
 export default {
   name: "active-blog",
   data() {
@@ -24,13 +26,10 @@ export default {
   computed: {
     blog() {
       return this.$store.state.activeBlog;
-    },
-    comments() {
-      return this.store.state.activeBlog.blog.comments;
     }
   },
   methods: {},
-  components: {}
+  components: { comments }
 };
 </script>
 

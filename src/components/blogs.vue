@@ -1,6 +1,8 @@
-<template>
-  <div class="blogs">
-    <blog v-for="blog in blogs" :blogData="blog" :key="blog._id"></blog>
+<template class = "container-fluid">
+  <div class="row">
+    <div class="blogs">
+      <blog v-for="blog in blogs" :blogData="blog" :key="blog._id"></blog>
+    </div>
   </div>
 </template>
 
