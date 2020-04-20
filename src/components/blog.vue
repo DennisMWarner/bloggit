@@ -1,15 +1,16 @@
 <template>
-  <div class="blog bg-danger m-4 p-3 rounded border border-secondary" @click="selectBlog()">
-    <h2 class="text-info">{{blogData.title}}</h2>
-    <div class="row mt-4">
+  <div class="blog bg-danger m-4 p-3 rounded shadow border border-secondary" @click="selectBlog()">
+    <h2 class="text-info text-center pt-5">{{blogData.title}}</h2>
+    <div class="row mt-4 mx-auto">
       <div class="col-10">
         <h5 class="text-warning text-right">
+          <br />
           <br />
           {{blogData.creator.name}}
         </h5>
       </div>
       <div class="col-2">
-        <img :src="blogData.creator.picture" class="profile-image" />
+        <img :src="blogData.creator.picture" class="profile-image rounded-circle" />
       </div>
     </div>
   </div>
@@ -42,7 +43,7 @@ export default {
 
 <style scoped>
 .profile-image {
-  min-height: 5vh;
-  max-height: 5vh;
+  min-height: 8vh;
+  max-height: 8vh;
 }
 </style>
