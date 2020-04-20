@@ -32,15 +32,21 @@ export default new Vuex.Store({
         console.error(error);
       }
     },
-
+    async createComment({ commit, dispatch }, newComment) {
+      console.log("createComment called...");
+      try {
+        let res = await api.post("comments", newComment);
+        dispatch("getBlog", newComment.blogId);
+      } catch (error) {
+        console.error(error);
+      }
+    },
     async getBlog({ commit, dispatch }, blogId) {
-      //console.log("getBlog blogId: ", blogId);
       try {
         let res = await api.get("blogs/" + blogId);
-        //console.log("blog found: ", res.data.blog._id);
+
         commit("setActiveBlog", res.data);
-        //console.log(res.data.blog);
-        console.log("ActiveBlog: ", this.state.activeBlog);
+        console.log(".../blogs/blogId/: ", res.data);
       } catch (error) {
         console.error(error);
       }

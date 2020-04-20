@@ -1,7 +1,7 @@
 <template>
   <div class="comment p-2 bg-info text-danger m-3 rounded">
     <h5>{{commentData.body}}</h5>
-    <h5 class="text-center">-{{commentData.creator.name}}</h5>
+    <h5 class="text-right">-{{commentData.creator.name}}</h5>
   </div>
 </template>
 
