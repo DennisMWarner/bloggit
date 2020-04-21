@@ -7,7 +7,6 @@
   </div>
 </template>
 
-
 <script>
 import createBlog from "../components/createBlog";
 import blog from "../components/blog";

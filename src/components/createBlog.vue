@@ -10,9 +10,9 @@
         />
         <label
           for="exampleFormControlTextarea1"
-          class="text-light bg-warning p-3 rounded shadow w-100 mt-3"
+          class="text-light bg-secondary p-1 rounded shadow w-100 mt-3"
         >
-          <h5>Enter a new blog post below...</h5>
+          <h5 class="px-3 pt-1">Blog Title above this bar... Blog Entry below...</h5>
         </label>
         <textarea
           class="form-control mt-2"
@@ -22,8 +22,11 @@
           v-model="newBlog.body"
         ></textarea>
       </div>
-      <button class="btn btn-primary bg-info w-50 rounded shadow text-danger" @click="createBlog()">
-        <h4>Submit new blog post</h4>
+      <button
+        class="btn btn-primary bg-primary border-info w-25 rounded shadow text-light mb-5 pt-3"
+        @click="createBlog()"
+      >
+        <h3>Submit new blog post</h3>
       </button>
     </form>
   </div>
@@ -45,8 +48,8 @@ export default {
   computed: {},
   methods: {
     createBlog() {
-      console.log(this.$store.state.activeBlog);
       this.$store.dispatch("createBlog", this.newBlog);
+      console.log("new blog: ", this.newBlog);
       this.newBlog = {};
     }
   },

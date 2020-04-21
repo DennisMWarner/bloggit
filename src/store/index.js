@@ -28,19 +28,16 @@ export default new Vuex.Store({
   },
   actions: {
     async getAllBlogs({ commit }) {
-      //console.log(this.state.blogs[0].creator.id);
-
       try {
         let res = await api.get("blogs");
         commit("setAllBlogs", res.data);
-        // console.log(res);
+        console.log("all blogs: ", res.data);
       } catch (error) {
         console.error(error);
       }
     },
 
     async createComment({ commit, dispatch }, newComment) {
-      console.log("createComment called...");
       try {
         let res = await api.post("comments", newComment);
         dispatch("getBlog", newComment.blogId);
@@ -50,30 +47,30 @@ export default new Vuex.Store({
     },
 
     async createBlog({ commit, dispatch }, newBlog) {
-      console.log("createBlog called...");
       try {
         let res = await api.post("blogs", newBlog);
-        //dispatch("getProfileBlogs", newComment.blogId);
       } catch (error) {
         console.error(error);
       }
     },
+
     async getBlog({ commit, dispatch }, blogId) {
       try {
         let res = await api.get(`blogs/${blogId}`);
-
         commit("setActiveBlog", res.data);
-        // console.log(".../blogs/blogId/: ", res.data);
       } catch (error) {
         console.error(error);
       }
     },
+
     setBearer({}, bearer) {
       api.defaults.headers.authorization = bearer;
     },
+
     resetBearer() {
       api.defaults.headers.authorization = "";
     },
+
     async getProfile({ commit }) {
       try {
         let res = await api.get("profile");
@@ -82,10 +79,12 @@ export default new Vuex.Store({
         console.error(error);
       }
     },
+
     async getProfileBlogs({ commit }, profileId) {
       try {
         let res = await api.get("profile/blogs");
         commit("setProfileBlogs", res.data);
+        console.log("profileBlogs: ", this.state.profileBlogs);
       } catch (error) {
         console.error(error);
       }

@@ -15,8 +15,10 @@ export default {
   },
   computed: {},
   methods: {},
-  components: {},
-  created() {}
+  components: {}
+  // created() {
+  //   return this.$store.dispatch("getprofile");
+  // }
 };
 </script>
 

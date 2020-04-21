@@ -12,6 +12,9 @@ export default {
   components: {
     blogs,
     blog
+  },
+  created() {
+    return this.$store.dispatch("getAllBlogs");
   }
 };
 </script>
