@@ -13,7 +13,7 @@
         <img :src="blogData.creator.picture" class="profile-image rounded-circle" />
       </div>
     </div>
-    <div class="row">
+    <div class="row" v-if="blogData.creatorEmail==this.$auth.userInfo.email">
       <div class="col-md-4 offset-10 text-center mt-5 m-auto">
         <button class="btn btn-warning m-1 border border-info text-light px-4 rounded shadow">Edit</button>
         <button class="btn btn-danger border border-info text-left rounded shadow">Delete</button>
